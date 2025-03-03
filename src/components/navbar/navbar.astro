@@ -1,0 +1,86 @@
+---
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import Dropdown from "./dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+
+const menuitems = [
+  {
+    title: "Home",
+    path: "/",
+   },
+  {
+    title: "TeraBox MOD APK",
+    path: "/download-terabox-mod-apk-free",
+  },
+  {
+    title: "TeraBox MOD APK iOS",
+    path: "/download-terabox-mod-apk-for-iphone-free",
+  },
+  {
+    title: "TeraBox for PC",
+    badge: true,
+    path: "/download-terabox-mod-apk-for-pc-free",
+  },
+ {
+    title: "How To",
+    path: "/how-to-download-terabox-mod-apk-free",
+  },
+];
+---
+
+<div class="max-full-screen-lg mx-auto px-5"> 
+<header class="flex flex-col lg:flex-row justify-center items-center my-5">
+    <Astronav>
+
+      <div class="flex w-full lg:w-auto items-center justify-between">
+
+		<a href="/"><img class="text-indigo-500 md:order-1" width="50" height="50" src="/logo-nav.webp" alt="TeraBox Mod APK New version Download"></a>
+
+      <div class="block lg:hidden"><MenuIcon class="w-4 h-4 text-gray-800" />
+      </div>
+      </div>
+
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul class="flex flex-col lg:flex-row lg:gap-3">
+          {
+            menuitems.map((item, index) => (
+              <>
+                {item.children && (
+                  <Dropdown
+                    title={item.title}
+                    children={item.children}
+                    lastItem={index === menuitems.length - 1}
+                  />
+                )}
+
+                {!item.children && (
+                  <li>
+                    <a
+                      href={item.path}
+                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      <span> {item.title}</span>
+                      {item.badge && (
+                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
+                          New
+                        </span>
+                      )}
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+        <div class="lg:hidden flex items-center mt-3 gap-4">
+        <Link class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-blue-600 px-4 py-2 bg-blue-600 text-white hover:bg-blue-600 border-2 border-transparent" href="/download-terabox-mod-apk-free" size="md">Download TeraBox MOD</Link>
+        </div>
+      </MenuItems>
+    </Astronav>
+    <div>
+      <div class="hidden lg:flex items-center gap-4">
+        <Link class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-blue-600 px-4 py-2 bg-blue-600 text-white hover:bg-blue-600 border-2 border-transparent" href="/download-terabox-mod-apk-free" size="md">Download TeraBox MOD</Link>
+      </div>
+    </div>
+  </header>
+</div>

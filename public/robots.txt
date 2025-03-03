@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+Disallow: /blog/complete-guide-fullstack-development/
+Disallow: /blog/essential-data-structures-algorithms/
+Disallow: /blog/how-to-become-frontend-master/
+Disallow: /blog/kitchensink/
+Disallow: /blog/post1---copy---copy---copy---copy/
+Disallow: /blog/post1---copy---copy---copy-2/
+Disallow: /blog/post1---copy---copy-2/
+Disallow: /blog/post1---copy---copy-3/
+Disallow: /blog/post1---copy---copy/
+Disallow: /blog/post1---copy-2---copy---copy/
+Disallow: /blog/post1---copy-2---copy/
+
+
+
+Sitemap: https://teraboxmod.cfd/sitemap-index.xml
